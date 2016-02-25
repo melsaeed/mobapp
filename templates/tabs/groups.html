@@ -1,0 +1,66 @@
+<div class="theme-showcase tab2-groups" role="main">
+    <div class="employee-operation">
+        <a class="add-group" data-toggle="modal" data-target="#addEmp">إضافة مجموعة جديدة</a>
+        <div class="modal fade login-box" id="addEmp" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" class="form-horizontal specification-home">
+                            <div class="form-group">
+                                <label>اسم المجموعة</label>
+                                <input type="text" ng-model="$root.newGroupName">
+                            </div>
+                            <div class="form-group specification-operation">
+                                <input type="submit" class="" value="اضافة" style="float:left;" ng-click="createGroup()">
+                                <a data-dismiss="modal" aria-label="Close" style="float:left;">الغاء</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="employee-list">
+        <ul>
+            <li class="container" ng-repeat="group in key.company.group">
+                <span class="employee-name group-name">{{ group.name }}</span>
+                <span class="operation-icon">
+                    <a style="color:#333;" href="#/edit_group/{{ group.company_group_id }}"><i class="fa fa-pencil edit-group"></i></a>
+                    <i class="delete-group fa fa-trash-o" ng-click="delete_group($index)"></i>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div> <!-- /end tab groups -->
+
+
+<div class="modal fade login-box" id="deletGroup" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">هل تريد حذف هذة المجموعة </h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal specification-home">
+                    <div class="form-group specification-operation">
+                        <input type="submit" ng-click="_delete_group()" class="" value="حذف" style="float:left;">
+                        <a data-dismiss="modal" aria-label="Close" style="float:left;">الغاء</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

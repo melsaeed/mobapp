@@ -1,0 +1,73 @@
+<div class="tab3-orders emp-requests">
+    <div class="employee-list">
+        <ul>
+            <li class="container"  ng-repeat="request in invitations.incoming">
+                <img ng-src="{{request.img}}" width="45">
+                <span class="employee-name"> {{request.name}}<br>
+                    <span class="request-date">{{ request.date }}</span>
+                </span>
+                <span class="operation-icon">
+                    <input type="checkbox" ng-checked="request.checked">
+                </span>
+            </li>
+        </ul>
+        <span class="add-request-operations" data-toggle="modal" data-target="#addReq">
+            <i class="fa fa-plus"></i>
+        </span>
+
+        <div class="modal fade login-box" id="addReq" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+            <span class="add-request-operations check-yes">
+                <i class="fa fa-check"></i>
+            </span>
+            <span ng-click="_accept($index)" class="say-yes">قبول</span>
+            <br>
+
+            <span class="add-request-operations check-no" data-toggle="modal" data-target="#refuseReq">
+                <i class="fa fa-times"></i>
+            </span>
+            <span ng-click="_refuse($index)" class="say-no">رفض</span>
+            <br>
+
+            <span class="add-request-operations">
+                <i class="fa fa-arrow-left"></i>
+            </span>
+        </div>
+
+    </div>
+</div> <!-- /end tab orders -->
+
+
+
+
+
+<div class="modal fade login-box" id="acceptReq" tabindex="-1" role="dialog"
+aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal specification-home">
+                    من فضلك حدد المجموعة التي تريد اضافة الموظفين بها
+                    <select ng-model="$root.popup_group_id">
+                        <option ng-repeat="group in groups" ng-value="group.company_group_id">
+                            {{group.name}}
+                        </option>
+                    </select>
+
+                    <div class="form-group specification-operation">
+                        <input type="submit" onclick="$('#acceptReq').modal('hide')" class="" value="لا" style="float:left;">
+                        <input type="submit" ng-click="confirmed_accept()" class="" value="نعم" style="float:left;">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

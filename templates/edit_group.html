@@ -1,0 +1,109 @@
+<nav class="navbar navbar-inverse ">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="click-side-menu navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="side-menu" ng-include src="'templates/bg.html'"></div>
+            <a class="navbar-brand" href="#">تعديل مجموعة</a>
+            <div class="header-icon">
+                <span class="edit-group-name" data-toggle="modal" data-target="#editGroupName">
+                    <i class="fa fa-pencil"></i>
+                </span>
+                <div class="modal fade login-box" id="editGroupName" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="">تعديل  المجموعة </h4>
+                                <input type="text" class="modal-title edit-group-header" id="myModalLabel" ng-model="$root.newGroupName" />
+                            </div>
+                            <div class="modal-body">
+                                <form role="form" class="form-horizontal specification-home">
+                                    <div class="form-group specification-operation">
+                                        <input onclick="$('#editGroupName').modal('hide')" type="submit" class="" value="تعديل" style="float:left;">
+                                        <a data-dismiss="modal" aria-label="Close" style="float:left;">الغاء</a>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<div class="tabs">
+    <nav class="navbar navbar-inverse main-menu">
+        <div class="container">
+            <div class="navbar-header tab-links group-tabs">
+                <a href="javascript:tab('tab1', 'online')" class="navbar-brand col-sm-6 online  group-link-active">
+                    اللايف
+                </a>
+                <a href="javascript:tab('tab2', 'offline')" class="navbar-brand offline col-sm-6">
+                    الاوفلاين
+                </a>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="tab-content" dir="ltr" style="overflow-x: scroll; overflow-x: hidden; margin-top:50px;">
+        <div id="tab1" class="theme-showcase tab active" role="main">
+          <div class="employee-list group-editing">
+              <ul>
+                  <li class="container" ng-repeat="screen in screens.online" >
+                      <input type="checkbox"  ng-click="checkPermission('online', $index)" ng-checked="screen.checked" >
+                      <span class="employee-name group-name">{{screen.screen_key}}</span>
+                  </li>
+              </ul>
+              <span class="add-request-operations save-editinggroup" ng-click="_manageGroup()">
+                  <i class="fa fa-floppy-o"></i>
+              </span>
+          </div>
+
+        </div> <!-- /container -->
+        <div id="tab2" class="theme-showcase tab" role="main">
+          <div class="employee-list group-editing">
+              <ul>
+                  <li class="container" ng-repeat="screen in screens.offline" >
+                      <input type="checkbox"  ng-click="checkPermission('offline', $index)" ng-checked="screen.checked" >
+                      <span class="employee-name group-name">{{screen.screen_key}}</span>
+                  </li>
+              </ul>
+              <span class="add-request-operations save-editinggroup" ng-click="_manageGroup()">
+                  <i class="fa fa-floppy-o"></i>
+              </span>
+          </div>
+        </div> <!-- /container -->
+    </div>
+</div>
+
+<script type="text/javascript">
+  function tab(selector, link){
+      $(".tab").hide();
+      $('.group-link-active').removeClass('group-link-active');
+      $('#' + selector).show();
+      $('.' + link).addClass('group-link-active');
+  }
+  jQuery(document).ready(function ($)
+  {
+      // Styles
+      $('input.icheck-11').iCheck({
+          checkboxClass: 'icheckbox_square-green',
+      });
+
+      $(".click-side-menu").click(function () {
+          $(".side-menu").show('slow');
+      });
+
+      $('.tab-content').css('height', (window.innerHeight - 150) + 'px');
+  });
+</script>

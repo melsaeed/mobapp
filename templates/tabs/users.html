@@ -1,0 +1,116 @@
+<div class="theme-showcase  tab1-employees" role="main">
+    <div class="employee-operation">
+        <a class="add-emp" ng-click="userInvitation()">إضافة موظف جديد</a>
+
+        <div class="modal fade login-box" id="addEmp" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" class="form-horizontal specification-home" ng-submit="">
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="text" ng-model="$parent.userEmail">
+                            </div>
+
+                            <div class="form-group">
+                                <label>إضافة الى مجموعة</label>
+
+                                <select ng-model="$parent.popup_group_id">
+                                    <option ng-repeat="group in groups" ng-value="group.company_group_id">
+                                        {{group.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group specification-operation">
+                                <input type="submit" ng-click="_userInvitation()" class="" value="اضافة"
+                                       style="float:left;">
+                                <a data-dismiss="modal" aria-label="Close" style="float:left;">إلغاء</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <a ng-class="sm1.length ? 'add-emp' : 'add-emp-group'" ng-click="addUserToGroup()">اضف الى المجموعة</a>
+
+        <div class="modal fade login-box" id="addGroup" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" class="form-horizontal specification-home">
+                            <div class="form-group">
+                                <label>إضافة الى مجموعة</label>
+                                    <select ng-model="users1_group_id"
+                                            ng-options="item.name for item in groups track by item.company_group_id"></select>
+                            </div>
+                            <div class="form-group specification-operation">
+                                <input type="submit" class="" value="اضافة" style="float:left;"  ng-click="addToGroup1()">
+                                <a data-dismiss="modal" aria-label="Close"
+                                   style="float:left;">الغاء</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="employee-list">
+        <ul>
+            <li class="container" ng-repeat="user in key.users | filter: search" ng-hide="user.deleted">
+                <input type="checkbox" ng-checked="user.checked == 1 ? true : false" ng-click="select_menu1($index)">
+                <img ng-src="{{ user.img }}">
+                <span class="employee-name">{{ user.full_name }}<br>
+                    <span class="job-type">{{ user.gname }}</span>
+                </span>
+                <span class="operation-icon">
+                    <i ng-class="user.deactivated == 1 ? 'open-emp fa fa-play' : 'stop-emp fa fa-pause'"
+                       ng-click="user_status1($index)"></i>
+                    <i class="delete-emp fa fa-trash-o" ng-click="_delete_user($index)"></i>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div> <!-- /end tab employess -->
+
+
+<div class="modal fade login-box" id="deleteEmp" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    هل تريد حذف هذا الموظف؟
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal specification-home">
+                    <div class="form-group specification-operation">
+                        <input type="submit" ng-click="delete_user()" value="نعم" style="float:left;">
+                        <a data-dismiss="modal" aria-label="Close" style="float:left;">لا</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

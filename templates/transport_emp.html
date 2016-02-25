@@ -1,0 +1,170 @@
+<nav class="navbar navbar-inverse top-menu">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="click-side-menu navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="side-menu" ng-include src="'templates/bg.html'"></div>
+            <a class="navbar-brand dashboard-menu-link" href="#"> {{  }}</a>
+        </div>
+
+    </div>
+</nav>
+<div class="container trasport-page">
+    <div class="employee-operation">
+        <a class="add-emp-group" data-toggle="modal" data-target="#addGroup" style="width: 96%;">اضف الى دائرة</a>
+        <div class="modal fade login-box" id="addGroup" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">تصنيف الى دائرة :  </h4>
+
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" class="form-horizontal specification-home">
+                            <div class="form-group">
+                                <ul class="icheck-list circles-lists-added">
+                                    <li>
+                                        <input class="icheck-11" type="radio" id="minimal-radio-1-11" name="minimal-radio-1">
+                                        <label for="minimal-radio-1-11">مشغلي النقل  </label>
+                                    </li>
+                                    
+                                    <li>
+                                        <input class="icheck-11" type="radio" id="minimal-radio-1-11" name="minimal-radio-1">
+                                        <label for="minimal-radio-1-11">مشغلي النقل  </label>
+                                    </li>
+                                    <li>
+                                        <input class="icheck-11" type="radio" id="minimal-radio-1-11" name="minimal-radio-1">
+                                        <label for="minimal-radio-1-11">مشغلي النقل  </label>
+                                    </li>
+                                    <li>
+                                        <input class="icheck-11" type="radio" id="minimal-radio-1-11" name="minimal-radio-1">
+                                        <label for="minimal-radio-1-11">مشغلي النقل  </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="form-group specification-operation">
+                                <input type="submit" class="" value="تصنيف" style="float:left;">
+                                <a data-dismiss="modal" aria-label="Close" style="float:left;">إلغاء</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li class="container">
+            <input type="checkbox">
+            <span class="employee-name">  بناء للتنمية</span>
+            <span class="operation-icon"> 
+                <i class="delete-emp favorite-port fa fa-star"></i>
+                <i class="delete-emp fa fa-trash-o" data-toggle="modal" data-target="#deletEmp"></i>
+
+            </span>
+            <div class="modal fade login-box" id="deletEmp" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">هل تريد مسح محمد عبد الله اسماعيل </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form" class="form-horizontal specification-home">
+                                <div class="form-group specification-operation">
+                                    <input type="submit" class="" value="نعم" style="float:left;">
+                                    <a ng-href="#/main" data-dismiss="modal" aria-label="Close" style="float:left;">لا</a>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="container">
+            <input type="checkbox">
+            <span class="employee-name">  بناء للتنمية</span>
+            <span class="operation-icon"> 
+                <i class="delete-emp fa fa-star"></i>
+                <i class="delete-emp fa fa-trash-o" data-toggle="modal" data-target="#deletEmp"></i>
+
+            </span>
+            <div class="modal fade login-box" id="deletEmp" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">هل تريد مسح محمد عبد الله اسماعيل </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form" class="form-horizontal specification-home">
+                                <div class="form-group specification-operation">
+                                    <input type="submit" class="" value="نعم" style="float:left;">
+                                    <a ng-href="#/main" data-dismiss="modal" aria-label="Close" style="float:left;">لا</a>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="container">
+            <input type="checkbox">
+            <span class="employee-name">  بناء للتنمية</span>
+            <span class="operation-icon"> 
+                <i class="delete-emp fa fa-star"></i>
+                <i class="delete-emp fa fa-trash-o" data-toggle="modal" data-target="#deletEmp"></i>
+
+            </span>
+            <div class="modal fade login-box" id="deletEmp" tabindex="-1" role="dialog"
+                 aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">هل تريد مسح محمد عبد الله اسماعيل </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form" class="form-horizontal specification-home">
+                                <div class="form-group specification-operation">
+                                    <input type="submit" class="" value="نعم" style="float:left;">
+                                    <a ng-href="#/main" data-dismiss="modal" aria-label="Close" style="float:left;">لا</a>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div> <!-- /container -->
+<script>
+            jQuery(document).ready(function ($)
+            {
+                $('input.icheck-11').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green'
+                });
+                $(".click-side-menu").click(function () {
+                    $(".side-menu").show('slow');
+                });
+            });
+</script>

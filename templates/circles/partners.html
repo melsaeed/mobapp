@@ -1,0 +1,71 @@
+<div class="theme-showcase" role="main" style="margin-top: 150px;">
+    <div class="employee-list">
+        <ul>
+            <li class="container" ng-repeat="company in circles.agent | filter: search"
+                ng-click="select_company('my_network', $index)"
+                ng-class="company.checked == 1 ? 'selectable' : 'inselectable'">
+                <span class="employee-name"> {{company.name}}<br>
+                    <!--<span class="request-date">virgo </span>-->
+                </span>             
+                <span class="operation-icon"> 
+
+                    <i class="fa fa-plus-circle" ng-click="addCompanyToCircle(company.company_id)"></i>
+                </span>
+            </li>
+
+        </ul>
+    </div>
+</div> <!-- /end tab groups -->
+
+
+<div class="modal fade login-box" id="deletGroup" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">هل تريد مسح مشغلي النقل </h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal specification-home">
+                    <div class="form-group specification-operation">
+                        <input type="submit" class="" value="اضافة" style="float:left;">
+                        <a data-dismiss="modal" aria-label="Close" style="float:left;">الغاء</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade login-box" id="addCompanyToCircle" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">أضف الشركة إلي الدائرة</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal specification-home" ng-submit="addToCircle('partners')">
+                    <div class="form-group specification-operation">
+                        <select class="add_to_circle_select" ng-model="$root.company_circle_id">
+                            <option ng-repeat="circle in circles.custom"
+                                    value="{{ circle.company_circle_id }}">{{ circle.name }}
+                            </option>
+                        </select>
+                        <input type="submit" class="" value="اضافة" style="float:left;">
+                        <a data-dismiss="modal" aria-label="Close" style="float:left;">الغاء</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

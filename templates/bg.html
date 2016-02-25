@@ -1,0 +1,40 @@
+<div class="list-side-menu" ng-controller="menuCtrl">
+    <div class="side-menu-cover">
+        <img class="cover-menu" src="images/cover.jpg">
+        <img class="user-img-menu" ng-src="{{ user.img }}">
+        <span class="user-email-menu">{{ user.email }}</span>
+    </div>
+    <ul class="slideMenuLinks">
+      <li>
+          <a ng-href="#/users" onclick="$('.side-menu').hide()">
+              <i class="fa fa-users"></i>
+              فريق العمل
+          </a>
+      </li>
+      <li>
+            <a ng-href="#/main_dashboard" onclick="$('.side-menu').hide()">
+                <i class="fa fa-users"></i>
+                البيانات الأساسية
+            </a>
+        </li>
+        <li ng-show="permission(14) && companyTypeId(1)">
+            <a ng-href="#/circles" onclick="$('.side-menu').hide()">
+                <i class="fa fa-share-alt"></i>
+                 الدوائر
+            </a>
+        </li>
+        <li>
+            <a ng-href="#/activity_dashboard" onclick="$('.side-menu').hide()">
+                <i class="fa fa-download"></i>
+                 آخر اعمال الفريق
+            </a>
+        </li>
+        <li>
+            <a ng-href="#/logout">
+                <i class="fa fa-power-off"></i>
+                 تسجيل الخروج
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="sidemenu-bg" onclick="$('.side-menu').hide()"></div>

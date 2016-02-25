@@ -1,0 +1,145 @@
+<nav class="navbar navbar-inverse top-menu">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="click-side-menu navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="side-menu" ng-include src="'templates/bg.html'"></div>
+            <a class="navbar-brand" ng-href="#/circles">الدوائر</a>
+            <div class="header-icon">
+                <span class="search-icon-header" ng-click="search_modal()">
+                    <i class="fa fa-search"></i>
+                </span>
+
+
+                <div class="modal search-home" id="mysrach" style="color:#333; margin: 0; padding: 0;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <form>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span>
+                                    </button>
+                                    <input type="text">
+                                    <input type="submit">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<span class="filter-header" data-toggle="modal" data-target="#myModal">-->
+                    <!--<i class="fa fa-filter"></i>-->
+                <!--</span>-->
+                <div class="modal fade login-box" id="myModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">تصنيف :  </h4>
+                            </div>
+                            <div class="modal-body">
+                                <form role="form" class="form-horizontal specification-home">
+                                    <div class="form-group">
+                                        <ul class="icheck-list">
+                                            <li>
+                                                <input tabindex="5" type="checkbox" class="icheck-11" id="minimal-checkbox-1-11">
+                                                <label for="minimal-checkbox-1-11">مدير تأشيرات</label>
+                                            </li>
+                                            <li>
+                                                <input tabindex="6" type="checkbox" class="icheck-11" id="minimal-checkbox-2-11" checked>
+                                                <label for="minimal-checkbox-2-11">مديرين</label>
+                                            </li>
+                                            <li>
+                                                <input tabindex="6" type="checkbox" class="icheck-11" id="minimal-checkbox-2-11" checked>
+                                                <label for="minimal-checkbox-2-11">دعم فني</label>
+                                            </li>
+                                            <li>
+                                                <input tabindex="6" type="checkbox" class="icheck-11" id="minimal-checkbox-2-11" checked>
+                                                <label for="minimal-checkbox-2-11">محاسبين</label>
+                                            </li>
+                                            <li>
+                                                <input tabindex="6" type="checkbox" class="icheck-11" id="minimal-checkbox-2-11" checked>
+                                                <label for="minimal-checkbox-2-11">مصممين جرافيك</label>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="form-group specification-operation">
+                                        <input type="submit" class="" value="تصنيف" style="float:left;">
+                                        <a ng-href="#/main" data-dismiss="modal" aria-label="Close" style="float:left;">إلغاء</a>
+
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<nav class="navbar navbar-inverse main-menu">
+    <div class="container">
+        <div class="navbar-header">
+            <a ng-click="_switch('web_safa')" class="navbar-brand col-sm-2 circle-links" ng-show="0">
+                <span>
+                    <i class="fa fa-user"></i> <br>
+                    شبكة صفا
+                </span>
+            </a>
+            <a ng-click="" class="navbar-brand col-sm-2 circle-links" ng-show="0">
+                <span>
+                    <i class="fa fa-sitemap"></i> <br>
+                     شبكتي
+                </span>
+            </a>
+            <a ng-click="_switch('partners')" class="navbar-brand col-sm-2 circle-links">
+                <span>
+                    <i class="fa fa-user"></i> <br>
+                    وكلائي
+                </span>
+            </a>
+            <a ng-click="_switch('country')" class="navbar-brand col-sm-2 circle-links">
+                <span>
+                    <i class="fa fa-plane"></i> <br>
+                    الدول
+                </span>
+            </a>
+            <a ng-click="_switch('fav')" class="navbar-brand col-sm-2 circle-links">
+                <span>
+                    <i class="fa fa-star"></i> <br>
+                    المفضلة
+                </span>
+            </a>
+            <a ng-click="_switch('custom')" class="navbar-brand col-sm-2 circle-links">
+                <span>
+                    <i class="fa fa-share-alt"></i> <br>
+                    دوائر مخصصة
+                </span>
+            </a>
+        </div>
+
+    </div>
+</nav>
+<script>
+    jQuery(document).ready(function ($)
+    {
+        $(".click-side-menu").click(function () {
+            $(".side-menu").show('slow');
+        });
+    });
+    $('input.icheck-11').iCheck({
+        checkboxClass: 'icheckbox_square-green',
+    });
+</script>

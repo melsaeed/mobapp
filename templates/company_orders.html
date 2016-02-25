@@ -1,0 +1,45 @@
+<nav class="navbar navbar-inverse top-menu">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="click-side-menu navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="side-menu" ng-include src="'templates/bg.html'"></div>
+            <a class="navbar-brand dashboard-menu-link" href="#">طلبات الشركات  </a>
+        </div>
+
+    </div>
+</nav>
+<nav class="navbar navbar-inverse main-menu" style="top: 51px;">
+    <div class="container">
+        <div class="navbar-header">
+            <a ng-click="_switch('out_orders')" class="navbar-brand dashboard-top-link">
+                <span style="border-left: 2px solid #5f5845;">
+                    <i class="fa fa-arrow-down"></i> <br>
+                    الطلبات الواردة
+                </span>
+            </a>
+            <a ng-click="_switch('in_orders')" class="navbar-brand dashboard-top-link" style="border-bottom:2px solid #b69c64;">
+                <span>
+                    <i class="fa fa-arrow-up"></i> <br>
+                    الطلبات الصادرة
+                </span>
+            </a>
+        </div>
+
+    </div>
+</nav>
+<div ng-include="tab_content"></div>
+
+<script>
+            jQuery(document).ready(function ($)
+            {
+
+                $(".click-side-menu").click(function () {
+                    $(".side-menu").show('slow');
+                });
+            });
+</script>

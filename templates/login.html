@@ -1,0 +1,47 @@
+﻿<div class="container">
+    <div class="logo">
+        <img src="images/logo.png" >
+    </div>
+    <form class="form-signin" ng-submit="login()">
+        <label for="inputEmail" class="">البريد الإلكتروني</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="البريد الإلكتروني" required autofocus ng-model="credintials.email">
+
+        <label for="inputPassword" class="">كلمة المرور</label>
+        <input type="password" id="inputPassword" class="form-control error" placeholder="كلمة المرور" required ng-model="credintials.password">
+
+        <label class="incorrectPassword"> خطأ في كلمة السر
+            <i class="fa fa-exclamation-triangle"></i>
+        </label>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">تسجيل الدخول</button>
+        <a ng-href="#/forget_pass" class="forgetPassword"> نسيت كلمة السر </a>
+        <label class="newaccount"> لا تملك حساب في صفا ؟
+            <a href="#/registration">تكوين حساب صفا جديد</a>
+        </label>
+    </form>
+
+    <div class="login-anotheroptions">
+        <span>تسجيل الدخول بإستخدام</span> <br>
+
+        <div class="main-footer-block">
+            <a href="" class="sign-google">
+                <i class="fa fa-google-plus"></i>
+                جوجل
+            </a>
+        </div>
+
+        <div class="main-footer-block">
+            <a href="" class="sign-microsoft">
+                <i class="fa fa-windows"></i>
+                ميكروسوفت
+            </a>
+        </div>
+        <div class="main-footer-block">
+            <a href="" class="sign-yahoo">
+                <img src="images/yahoo.png">
+                ياهوو
+            </a>
+        </div>
+    </div>
+
+</div> <!-- /container -->

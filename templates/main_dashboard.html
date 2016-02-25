@@ -1,0 +1,48 @@
+<nav class="navbar navbar-inverse top-menu">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="click-side-menu navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="side-menu" ng-include src="'templates/bg.html'"></div>
+            <a class="navbar-brand dashboard-menu-link" href="javascript:void(0)">  البيانات الأساسية</a>
+        </div>
+
+    </div>
+</nav>
+<div class="container dashboard-page">
+    <div class="user-dashboard-block block-user-image">
+        <img ng-src="{{ company.logo }}" class=""/>
+    </div>
+    <div class="user-dashboard-block">
+        <span class="user-dashboard-title">اسم الشركة</span>
+        <span class="user-dashboard-details">{{ company.name }}</span>
+    </div>
+    <div class="user-dashboard-block">
+        <span class="user-dashboard-title"> بلد المقر</span>
+        <span class="user-dashboard-details">{{ company.countryName }}</span>
+    </div>
+    <div class="user-dashboard-block">
+        <span class="user-dashboard-title">نوع الشركة</span>
+        <span class="user-dashboard-details">{{ company.companyTypeName }} </span>
+    </div>
+    <div class="user-dashboard-block">
+        <span class="user-dashboard-title">تليفون</span>
+        <span class="user-dashboard-details">{{company.phone}}</span>
+    </div>
+    <div class="user-dashboard-block">
+        <span class="user-dashboard-title">  البريد الالكتروني</span>
+        <span class="user-dashboard-details">{{ company.email }}</span>
+    </div>
+</div> <!-- /container -->
+<script>
+    jQuery(document).ready(function ($)
+    {
+        $(".click-side-menu").click(function () {
+            $(".side-menu").show('slow');
+        });
+    });
+</script>

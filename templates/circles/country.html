@@ -1,0 +1,73 @@
+<div class="theme-showcase" role="main">
+
+    <div class="employee-list">
+        <ul>
+            <li class="container"
+                ng-repeat="country in circles.country | filter: search"
+                ng-class="company.checked == 1 ? 'selectable' : 'inselectable'">
+                <a ng-href="#/circle_comp/country/{{ $index }}" class="employee-name group-name">  {{country.info.name}}  </a>
+                <span class="operation-icon"> 
+                    <!--<a style="color:#333;" href=""><i class="fa fa-pencil edit-group"></i></a>-->
+                    <!--<i class="fa fa-star" ng-class="company.fav ? 'white' : ''" ng-click="fav($index)"></i>-->
+                    <i class="delete-group fa fa-trash-o" ng-click="delete($index)" data-toggle="modal" data-target="#deletGroup" style="color:#fff"></i>
+                </span>
+
+            </li>
+
+        </ul>
+    </div>
+</div> <!-- /end tab groups -->
+
+<div class="modal fade login-box" id="deletGroup" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">هل تريد حذف الدائرة؟</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal specification-home">
+                    <div class="form-group specification-operation">
+                        <input type="submit" ng-click="_delete()" value="حذف" style="float:left;">
+                        <a data-dismiss="modal" aria-label="Close" style="float:left;">الغاء</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade login-box" id="createCircle" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true" style="color:#333; margin: 0; padding: 0;">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">أسم الدائرة؟</h4>
+                <input type="text" ng-model="$root.circleName">
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-horizontal specification-home">
+                    <div class="form-group specification-operation">
+                        <input type="submit" ng-click="create()" value="إنشاء" style="float:left;">
+                        <a data-dismiss="modal" aria-label="Close" style="float:left;">الغاء</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    .white{
+        color: #F9941E !important;
+    }
+</style>
