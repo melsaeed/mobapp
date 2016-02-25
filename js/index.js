@@ -37,6 +37,6 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        document.write('Received Event: ' + id.toString());
+        //document.write('Received Event: ' + id.toString());
     }
 };

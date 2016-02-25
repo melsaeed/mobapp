@@ -17,7 +17,7 @@ safa.config(function ($routeProvider, $httpProvider) {
         //when('/activity_dashboard', {templateUrl: 'templates/activity_dashboard.html', controller: 'activity_dashboardCtrl'}).
         //when('/main_dashboard', {templateUrl: 'templates/main_dashboard.html', controller: 'main_dashboardCtrl'}).
         //when('/main', {templateUrl: 'templates/main.html', controller: 'mainCtrl'}).
-        //when('/users', {templateUrl: 'templates/users.html', controller: 'usersCtrl'}).
+        when('/users', {templateUrl: 'templates/users.html', controller: 'usersCtrl'}).
         //when('/circles', {templateUrl: 'templates/circles.html', controller: 'circlesCtrl'}).
         //when('/edit_group/:id', {templateUrl: 'templates/edit_group.html', controller: 'edit_groupCtrl'}).
         //when('/create_group', {templateUrl: 'templates/edit_group.html', controller: 'create_groupCtrl'}).
