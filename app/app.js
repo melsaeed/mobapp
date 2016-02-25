@@ -33,7 +33,7 @@ safa.factory('httpRequestInterceptor', function ($cookies) {
     return {
         request: function (config) {
           console.log($cookies.get('token'));
-            config.headers['X-Auth-Token'] = $cookies.get('token');//window.localStorage.getItem("token");
+            config.headers['X-Auth-Token'] = window.localStorage.getItem("token");
             return config;
         }
     };

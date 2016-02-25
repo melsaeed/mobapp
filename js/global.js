@@ -108,5 +108,5 @@ $('.slideMenuLinks a').click(function () {
 });
 
 //window.localStorage = cordova.SecureLocalStorage;
-//window.innerWidth = window.innerWidth - 1;
-//window.innerWidth = window.innerWidth + 1;
+window.innerWidth = window.innerWidth - 1;
+window.innerWidth = window.innerWidth + 1;
