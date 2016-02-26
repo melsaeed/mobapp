@@ -495,7 +495,7 @@ a.add-group {
     margin-top: 22px;
 }
 span.add-request-operations.save-editinggroup {
-    right: 40px;
+    /*right: 40px;*/
     left: unset;
     bottom: 60px;
 }

@@ -24,7 +24,7 @@ safa.config(function ($routeProvider, $httpProvider) {
         when('/circle_comp/:type/:id', {templateUrl: 'templates/transport_emp.html', controller: 'circle_compCtrl'}).
         when('/team_lastactivity', {templateUrl: 'templates/team_lastactivity.html', controller: 'team_lastactivityCtrl'}).
         when('/company_orders', {templateUrl: 'templates/company_orders.html', controller: 'company_ordersCtrl'}).
-        otherwise({redirectTo: '/login'});
+        otherwise({redirectTo: '/welcome_screen'});
     $httpProvider.defaults.withCredentials = true;
     $httpProvider.interceptors.push('httpRequestInterceptor');
 });
