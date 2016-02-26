@@ -5,8 +5,9 @@
             <li class="container"
                 ng-repeat="country in circles.country | filter: search"
                 ng-class="company.checked == 1 ? 'selectable' : 'inselectable'">
-                <a ng-href="#/circle_comp/country/{{ $index }}" class="employee-name group-name">  {{country.info.name}}  </a>
-                <span class="operation-icon"> 
+                <!--<a ng-href="#/circle_comp/country/{{ $index }}" class="employee-name group-name">  {{country.info.name}}  </a>-->
+                <a class="employee-name group-name">  {{country.info.name}}  </a>
+                <span class="operation-icon">
                     <!--<a style="color:#333;" href=""><i class="fa fa-pencil edit-group"></i></a>-->
                     <!--<i class="fa fa-star" ng-class="company.fav ? 'white' : ''" ng-click="fav($index)"></i>-->
                     <i class="delete-group fa fa-trash-o" ng-click="delete($index)" data-toggle="modal" data-target="#deletGroup" style="color:#fff"></i>

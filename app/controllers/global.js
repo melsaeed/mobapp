@@ -2,7 +2,7 @@
 safa.controller('forgetPasswordCtrl', function ($scope, $http) {
     $scope.forget_password = function () {
         if ($scope.email.length == 0) {
-            error.fire("ÈÑíÏ ÅáßÊÑæäí ÛíÑ ÕÍíÍ");
+            error.fire("Ø¨Ø±ÙŠØ¯ Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ ØºÙŠØ± ØµØ­ÙŠØ­");
         }
         else {
             $http({
@@ -11,9 +11,9 @@ safa.controller('forgetPasswordCtrl', function ($scope, $http) {
                 data: {email: $scope.email}
             }).then(function (response) {
                 if (response.data.error)
-                    error.fire("ÈÑíÏ ÅáßÊÑæäí ÛíÑ ãØÇÈŞ");
+                    error.fire("Ø¨Ø±ÙŠØ¯ Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ ØºÙŠØ± Ù…Ø·Ø§Ø¨Ù‚");
                 else
-                    error.fire("Êã ÇÑÓÇá ÈÑíÏ ÅáßÊÑæäí áÊŞæã ÈÊÛííÑ ßáãÉ ÇáãÑæÑ¡ ÔßÑÇ áß");
+                    error.fire("ØªÙ… Ø§Ø±Ø³Ø§Ù„ Ø¨Ø±ÙŠØ¯ Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ Ù„ØªÙ‚ÙˆÙ… Ø¨ØªØºÙŠÙŠØ± ÙƒÙ„Ù…Ø© Ø§Ù„Ù…Ø±ÙˆØ±ØŒ Ø´ÙƒØ±Ø§ Ù„Ùƒ");
             });
         }
     }

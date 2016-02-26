@@ -6,8 +6,9 @@
                 ng-repeat="company in circles.custom | filter: search"
                 ng-if="company.fav == 1"
                 ng-class="company.checked == 1 ? 'selectable' : 'inselectable'">
-                <a ng-href="#/transport_emp/{{ $index }}" class="employee-name group-name"> {{ company.name }} </a>
-                <span class="operation-icon"> 
+                <!--<a ng-href="#/transport_emp/{{ $index }}" class="employee-name group-name"> {{ company.name }} </a>-->
+                <a class="employee-name group-name"> {{ company.name }} </a>
+                <span class="operation-icon">
                     <!--<a style="color:#333;" href=""><i class="fa fa-pencil edit-group"></i></a>-->
                     <i class="fa fa-star" ng-class="company.fav ? 'white' : ''" ng-click="fav($index)"></i>
                     <i class="delete-group fa fa-trash-o" ng-click="delete($index)" data-toggle="modal" data-target="#deletGroup"></i>
